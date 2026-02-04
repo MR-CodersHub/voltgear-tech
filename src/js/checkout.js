@@ -13,13 +13,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== LOGIN PROTECTION =====
 function checkLoginStatus() {
-  const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+  const currentUser = JSON.parse(localStorage.getItem('techgear_current_user') || 'null');
 
   if (!currentUser) {
     // Redirect to login
-    const returnUrl = window.location.pathname;
-    sessionStorage.setItem('checkoutReturn', returnUrl);
-    window.location.href = '../../auth/login.html?redirect=checkout';
+    Toast.warning('Please log in to proceed with checkout');
+    setTimeout(() => {
+      window.location.href = '../../auth/login.html?redirect=checkout';
+    }, 1000);
     return false;
   }
 
@@ -202,7 +203,7 @@ function setupFormSubmission() {
     };
 
     // Add user ID if logged in
-    const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+    const currentUser = JSON.parse(localStorage.getItem('techgear_current_user') || 'null');
     if (currentUser) {
       orderData.userId = currentUser.id;
     }

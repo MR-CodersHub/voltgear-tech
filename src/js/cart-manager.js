@@ -1,7 +1,7 @@
 /**
  * cart-manager.js
  * Global cart state management system using localStorage
- * Single source of truth: voltgear_cart
+ * Single source of truth: voltgear_cart per user
  */
 
 class CartManager {
@@ -10,12 +10,26 @@ class CartManager {
     this.ORDERS_KEY = 'voltgear_orders';
     this.cart = this.loadCart();
     this.initializeEventSystem();
+    
+    // Listen for logout to clear cart
+    window.addEventListener('logout', () => this.clearCart());
+  }
+
+  // Get user-specific cart key
+  getUserCartKey() {
+    try {
+      const user = JSON.parse(localStorage.getItem('techgear_current_user') || 'null');
+      return user && user.id ? `${this.CART_KEY}_${user.id}` : this.CART_KEY;
+    } catch (e) {
+      return this.CART_KEY;
+    }
   }
 
   // ===== CART STORAGE =====
   loadCart() {
     try {
-      const stored = localStorage.getItem(this.CART_KEY);
+      const key = this.getUserCartKey();
+      const stored = localStorage.getItem(key);
       return stored ? JSON.parse(stored) : [];
     } catch (e) {
       console.error('Failed to load cart:', e);
@@ -25,7 +39,8 @@ class CartManager {
 
   saveCart() {
     try {
-      localStorage.setItem(this.CART_KEY, JSON.stringify(this.cart));
+      const key = this.getUserCartKey();
+      localStorage.setItem(key, JSON.stringify(this.cart));
       this.dispatchCartUpdate();
     } catch (e) {
       console.error('Failed to save cart:', e);
@@ -112,6 +127,14 @@ class CartManager {
 
   getCart() {
     return [...this.cart];
+  }
+
+  // Clear cart (used on logout)
+  clearCart() {
+    const key = this.getUserCartKey();
+    this.cart = [];
+    localStorage.removeItem(key);
+    this.dispatchCartUpdate();
   }
 
   getCartItem(productId) {

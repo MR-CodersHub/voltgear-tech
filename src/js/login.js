@@ -6,7 +6,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Redirect if already logged in
     if (auth.isAuthenticated()) {
-        window.location.href = auth.getDashboardUrl();
+        const user = auth.getCurrentUser();
+        const dashboardUrl = user && user.role === 'admin' 
+            ? '../auth/admin/admin-dashboard.html'
+            : '../auth/user/user-dashboard.html';
+        window.location.href = dashboardUrl;
     }
 
     const loginForm = document.getElementById('login-form');

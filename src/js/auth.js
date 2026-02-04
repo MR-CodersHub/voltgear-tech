@@ -27,6 +27,37 @@ class AuthSystem {
     return this.currentUser;
   }
 
+  // Get dashboard URL based on role
+  getDashboardUrl() {
+    if (!this.currentUser) {
+      return 'auth/login.html';
+    }
+    return this.currentUser.role === 'admin'
+      ? 'auth/admin/admin-dashboard.html'
+      : 'auth/user/user-dashboard.html';
+  }
+
+  // Protect routes based on authentication and role
+  protectRoute(requiredRole = null) {
+    if (!this.isAuthenticated()) {
+      Toast.error('Please log in first');
+      setTimeout(() => {
+        window.location.href = 'auth/login.html';
+      }, 1000);
+      return false;
+    }
+
+    if (requiredRole && this.currentUser.role !== requiredRole) {
+      Toast.error('Access denied. Insufficient permissions.');
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 1000);
+      return false;
+    }
+
+    return true;
+  }
+
   // Sign up new user
   signup(userData) {
     const { name, email, password } = userData;
@@ -122,6 +153,15 @@ class AuthSystem {
   logout() {
     this.currentUser = null;
     localStorage.removeItem('techgear_current_user');
+    
+    // Clear cart on logout
+    if (window.Cart) {
+      window.Cart.clearCart();
+    }
+    
+    // Dispatch logout event
+    window.dispatchEvent(new Event('logout'));
+    
     return { success: true, message: 'Logged out successfully' };
   }
 

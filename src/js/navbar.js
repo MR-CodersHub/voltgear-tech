@@ -197,14 +197,48 @@ class Navbar {
   }
 
   setActiveLink() {
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname.toLowerCase();
     const navLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('#mobile-nav-container a');
+    const allNavLinks = [...navLinks, ...mobileNavLinks];
 
-    navLinks.forEach(link => {
+    allNavLinks.forEach(link => {
       const href = link.getAttribute('href');
-      if (currentPath.includes(href) && href !== '#' && href !== '') {
+      if (!href || href === '#') return;
+
+      let isMatch = false;
+      const normalizedHref = href.toLowerCase();
+      
+      // Extract just the filename from both paths
+      const currentFile = currentPath.split('/').filter(p => p).pop() || 'index.html';
+      const linkFile = normalizedHref.split('/').filter(p => p).pop() || 'index.html';
+      
+      // Home page special case
+      if ((currentFile === '' || currentFile === 'index.html') &&
+          (normalizedHref.includes('index.html') || normalizedHref === '.' || normalizedHref === './' || normalizedHref === '')) {
+        isMatch = true;
+      }
+      // Check for exact filename match (more precise than path includes)
+      else if (currentFile && linkFile && currentFile === linkFile && !currentFile.includes('?')) {
+        isMatch = true;
+      }
+      // Fallback: partial match for nested paths
+      else if (normalizedHref.length > 0 && normalizedHref !== '.' && normalizedHref !== './' &&
+               currentPath.includes(normalizedHref.replace(/\.\.\//g, '').replace(/\.\//g, ''))) {
+        // Make sure we're not matching "services" with "service-details"
+        const cleanHref = normalizedHref.replace(/\.\.\//g, '').replace(/\.\//g, '').split('?')[0];
+        const currentFile2 = currentPath.split('/').pop().split('?')[0];
+        if (cleanHref === currentFile2) {
+          isMatch = true;
+        }
+      }
+
+      if (isMatch) {
         link.classList.add('text-accent');
         link.classList.remove('text-white');
+      } else {
+        link.classList.remove('text-accent');
+        link.classList.add('text-white');
       }
     });
   }

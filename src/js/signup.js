@@ -20,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm-password').value;
-            const termsAccepted = document.getElementById('terms').checked;
 
             // Validate
             let isValid = true;
@@ -41,26 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 isValid = false;
             }
 
-            if (password !== confirmPassword) {
-                FormValidator.showError(document.getElementById('confirm-password'), 'Passwords do not match');
-                isValid = false;
-            }
-
-            if (!termsAccepted) {
-                Toast.error('Please accept the terms and conditions');
-                isValid = false;
-            }
-
             if (!isValid) return;
 
             // Attempt signup
             const result = auth.signup({ name, email, password });
 
             if (result.success) {
-                // Log activity
-                ActivityLogger.log('Signup', { email: result.user.email });
-                ActivityLogger.log('Login', { description: 'Automatic login after signup' });
-
                 Toast.success('Account created successfully! Redirecting...');
                 setTimeout(() => {
                     window.location.href = auth.getDashboardUrl();
