@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/icon/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+
+    <section class="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
+        <!-- Background Orbs -->
+        <div
+            class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent/10 rounded-full blur-[120px] animate-aurora">
+        </div>
+
+        <div class="max-w-md w-full relative z-10 reveal-up">
+            <!-- Logo -->
+            <div class="text-center mb-10">
+                <a href="../index.html"
+                    class="inline-flex items-center gap-3 text-4xl font-black lowercase tracking-tighter hover:opacity-80 transition-opacity">
+                    <img src="../assets/img/logo.svg" alt="VoltGear Logo" class="h-12 w-12">
+                    <span>volt<span class="text-accent font-italic">gear</span></span>
+                </a>
+            </div>
+
+            <!-- Login Card -->
+            <div class="glass-panel p-10 md:p-12 shadow-2xl border-white/10">
+                <h1 class="text-4xl font-black mb-2 tracking-tighter">ELITE <span class="text-gradient">ACCESS</span>
+                </h1>
+                <p class="text-secondary text-sm mb-10 font-outfit uppercase tracking-widest">Login to your dashboard
+                </p>
+
+                <form id="login-form" class="space-y-8">
+                    <div>
+                        <label for="email"
+                            class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Email
+                            Address</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white"
+                            placeholder="your.email@example.com">
+                    </div>
+
+                    <div>
+                        <label for="password"
+                            class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Secret
+                            Key</label>
+                        <div class="relative">
+                            <input type="password" id="password" name="password" required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white pr-12"
+                                placeholder="••••••••">
+                            <button type="button" id="toggle-password"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 text-muted hover:text-white transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[10px] font-black uppercase tracking-widest">
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input type="checkbox" id="remember" class="accent-accent">
+                            <span class="text-muted group-hover:text-secondary transition">Remember Session</span>
+                        </label>
+                        <button type="button" id="forgot-password-link"
+                            class="text-accent hover:underline">Forgot Password?</button>
+                    </div>
+
+                    <button type="submit" class="btn-primary w-full py-4 tracking-[0.2em]">
+                        AUTHORIZE ACCESS
+                    </button>
+                </form>
+
+                <div class="mt-8 text-center">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-muted">
+                        New Member?
+                        <a href="signup.html" class="text-accent hover:underline ml-2">Register Collection</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="../index.html"
+                    class="text-[10px] font-black uppercase tracking-widest text-muted hover:text-accent transition">
+                    ← HOME
+                </a>
+            </div>
+            <!-- Reset Password Modal -->
+            <div id="reset-modal"
+                class="fixed inset-0 bg-black/80 backdrop-blur-md hidden items-center justify-center z-50 opacity-0 transition-opacity duration-300">
+                <div class="glass-panel p-8 w-full max-w-sm mx-4 transform scale-95 transition-transform duration-300"
+                    id="reset-modal-content">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-xl font-black tracking-tighter">RESET <span class="text-gradient">ACCESS</span>
+                        </h2>
+                        <button id="close-reset-modal" class="text-muted hover:text-white transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <form id="reset-form" class="space-y-6">
+                        <div>
+                            <label for="reset-email"
+                                class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Recall
+                                Address</label>
+                            <input type="email" id="reset-email" required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white text-sm"
+                                placeholder="linked.email@domain.com">
+                        </div>
+                        <button type="submit" class="btn-primary w-full py-3 tracking-[0.2em] text-xs">
+                            TRANSMIT RECOVERY LINK
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../src/js/auth.js"></script>
+    <script src="../src/js/utils.js"></script>
+    <script src="../src/js/login.js"></script>
+    <script>
+        // Entrance animation
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.reveal-up').classList.add('animate-reveal');
+        });
+    </script>
+</body>
+
+</html>

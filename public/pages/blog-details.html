@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <meta name="description" content="Expert insights and deep dives into the world of high-performance tech.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+
+    <div id="navbar-container"></div>
+
+    <!-- Article Content -->
+    <div id="blog-details-container">
+        <!-- Dynamically populated -->
+    </div>
+
+    <!-- Related Gear Categories (Mandatory) -->
+    <div id="related-gear-categories"></div>
+
+    <!-- Related Section -->
+    <section class="py-32 px-4 border-t border-white/5 bg-dark-deep/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <div class="reveal-up">
+                    <span
+                        class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Editorial</span>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter">CONTINUE <span
+                            class="text-gradient">READING</span></h2>
+                </div>
+            </div>
+            <div id="related-articles-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/blog-details.js"></script>
+    <script>
+        // Simple scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-reveal');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

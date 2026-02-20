@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <meta name="description"
+        content="Read the latest tech articles, buying guides, setup tips, and gear comparisons from TechGear experts.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-dark-primary">
+
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-24 px-4 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center relative z-10 reveal-up">
+            <span class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Knowledge
+                Base</span>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter leading-none">
+                SETUP & GEAR <br> <span class="text-gradient">GUIDES</span>
+            </h1>
+            <p class="text-xl text-secondary max-w-2xl mx-auto">
+                Expert blueprints, buying strategies, and technical deep-dives to optimize your high-performance
+                workspace.
+            </p>
+        </div>
+    </section>
+
+    <!-- Search and Filter -->
+    <section class="py-12 px-4 sticky top-16 z-40 backdrop-blur-md border-y border-white/5 bg-dark-deep/60">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-6 items-center">
+                <!-- Search with Glass Styling -->
+                <div class="relative w-full lg:flex-1 group">
+                    <div
+                        class="absolute inset-y-0 left-5 flex items-center pointer-events-none opacity-30 group-focus-within:opacity-60 transition-opacity duration-300">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <input type="text" id="blog-search" placeholder="Search guides, gear, or keywords..."
+                        class="w-full bg-white/5 border border-white/10 rounded-xl pl-14 pr-6 py-3.5 outline-none focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent/30 transition-all duration-300 text-sm font-medium text-white placeholder:text-secondary shadow-lg">
+                </div>
+
+                <!-- Category Filter -->
+                <div class="flex items-center gap-4 w-full lg:w-auto">
+                    <span
+                        class="text-[9px] font-black uppercase tracking-wider text-accent/70 hidden md:block px-3">Filter:</span>
+                    <select id="category-filter"
+                        class="bg-white/5 border border-white/10 rounded-xl px-6 py-3.5 outline-none focus:border-accent focus:bg-accent/5 focus:ring-1 focus:ring-accent/30 transition-all text-sm font-bold text-white appearance-none cursor-pointer w-full lg:w-72 shadow-lg"
+                        style="background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 fill=%22%2300ffff%22 viewBox=%220 0 20 20%22%3E%3Cpath d=%22M7 7l3-3 3 3m0 6l-3 3-3-3%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1.25rem; padding-right: 2.5rem;">
+                        <option value="all" class="bg-dark-primary text-white">All Resource Types</option>
+                        <option value="Buying Guide" class="bg-dark-primary text-white">Buying Guide</option>
+                        <option value="Setup & Desk Guide" class="bg-dark-primary text-white">Setup & Desk Guide
+                        </option>
+                        <option value="Performance & Comfort Guide" class="bg-dark-primary text-white">Performance &
+                            Comfort Guide</option>
+                        <option value="Product / Category Comparison" class="bg-dark-primary text-white">Product /
+                            Category Comparison</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-max">
+                <!-- Blog posts will be inserted here by JavaScript -->
+            </div>
+
+            <div id="no-results" class="hidden text-center py-24 col-span-full">
+                <div class="text-6xl mb-4">🔍</div>
+                <h3 class="text-2xl font-black mb-3 tracking-tighter">No guides found</h3>
+                <p class="text-secondary/80 text-lg">Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/blog.js"></script>
+</body>
+
+</html>

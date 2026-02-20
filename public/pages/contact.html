@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Engineering - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <meta name="description" content="Connect with our technical support and sales engineering teams.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="min-h-[50vh] flex items-center pt-32 pb-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 bg-accent/5 blur-[120px] rounded-full animate-aurora"></div>
+        <div class="max-w-4xl mx-auto w-full text-center reveal-up">
+            <span
+                class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Communication
+                Portal</span>
+            <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">CONNECT WITH <br> <span
+                    class="text-gradient">OUR TEAM</span></h1>
+            <p class="text-xl text-secondary mt-8 max-w-xl mx-auto leading-relaxed">
+                Whether you're seeking technical insights or procurement assistance, our engineering support is active
+                24/7.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-32 px-4 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+
+                <!-- Contact Form -->
+                <div class="glass-panel p-10 md:p-12 reveal-up">
+                    <h2 class="text-3xl font-black mb-10 tracking-tighter uppercase">TRANSMIT <span
+                            class="text-gradient">INQUIRY</span></h2>
+                    <form id="contact-form" class="space-y-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label for="name"
+                                    class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Operator
+                                    Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white"
+                                    placeholder="Alex Rivian">
+                            </div>
+                            <div>
+                                <label for="email"
+                                    class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Signal
+                                    Address (Email)</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white"
+                                    placeholder="operator@system.tech">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject"
+                                class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Stream
+                                Category</label>
+                            <select id="subject" name="subject" required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white appearance-none">
+                                <option value="" class="bg-dark-deep">Select Frequency</option>
+                                <option value="product-inquiry" class="bg-dark-deep">Product Engineering</option>
+                                <option value="technical-support" class="bg-dark-deep">System Support</option>
+                                <option value="warranty" class="bg-dark-deep">Warranty Protocol</option>
+                                <option value="partnership" class="bg-dark-deep">Network Expansion</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message"
+                                class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Message
+                                Payload</label>
+                            <textarea id="message" name="message" required rows="6"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white resize-none"
+                                placeholder="Detail your requirements..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full py-5 tracking-[0.3em] font-black">
+                            TRANSMIT MESSAGE
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info & Map -->
+                <div class="space-y-12">
+                    <div class="reveal-up">
+                        <h2 class="text-3xl font-black mb-10 tracking-tighter uppercase">LOCATIONS & <span
+                                class="text-gradient">PROTOCOLS</span></h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="glass-card p-8 group">
+                                <h3 class="text-[10px] font-black uppercase tracking-widest text-accent mb-4">Email
+                                    Channel</h3>
+                                <p class="text-white font-black tracking-tight mb-1">support@techgear.com</p>
+                                <p class="text-muted text-xs font-mono">24/7 Monitoring</p>
+                            </div>
+                            <div class="glass-card p-8 group">
+                                <h3 class="text-[10px] font-black uppercase tracking-widest text-accent mb-4">Voice
+                                    Frequency</h3>
+                                <p class="text-white font-black tracking-tight mb-1">+1 (555) 123-4567</p>
+                                <p class="text-muted text-xs font-mono">0900 - 1800 EST</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-0 reveal-up relative overflow-hidden group rounded-2xl">
+                        <div class="h-96 relative">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976373095733!3d40.69740344222377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1641000000000!5m2!1sen!2sus"
+                                class="w-full h-full border-0 rounded-2xl" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Insight Section -->
+    <section class="py-32 px-4 bg-dark-deep relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-20 reveal-up">
+                <span
+                    class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Knowledge
+                    Base</span>
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase">COMMON <span
+                        class="text-gradient">INQUIRIES</span></h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="glass-card p-8 reveal-up">
+                    <h3 class="text-xl font-black mb-4 tracking-tight uppercase">Operational Hours?</h3>
+                    <p class="text-secondary text-sm leading-relaxed">Our digital support channels are monitored 24/7.
+                        Voice communication is active Monday through Friday, 0900 to 1800 EST.</p>
+                </div>
+
+                <div class="glass-card p-8 reveal-up" style="animation-delay: 0.1s">
+                    <h3 class="text-xl font-black mb-4 tracking-tight uppercase">Logistics Lead Time?</h3>
+                    <p class="text-secondary text-sm leading-relaxed">Standard fulfillment takes 3-5 operational cycles.
+                        Priority override (Express) is available at the checkout terminal for 1-2 cycle delivery.</p>
+                </div>
+
+                <div class="glass-card p-8 reveal-up" style="animation-delay: 0.2s">
+                    <h3 class="text-xl font-black mb-4 tracking-tight uppercase">Return Protocol?</h3>
+                    <p class="text-secondary text-sm leading-relaxed">We offer a 30-cycle satisfaction guarantee. Assets
+                        must be returned in original condition with all diagnostic packaging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/contact.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-reveal');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

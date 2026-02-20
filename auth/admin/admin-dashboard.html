@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Center - Admin - TechGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+
+    <div id="navbar-container"></div>
+
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Header -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-up">
+                <div>
+                    <span
+                        class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">System
+                        Status: Operational</span>
+                    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">COMMAND <br> <span
+                            class="text-gradient">CENTER</span></h1>
+                </div>
+                <div class="text-right">
+                    <p class="text-secondary text-sm font-outfit uppercase tracking-widest">Master Administrator</p>
+                    <p class="text-white font-black text-xl tracking-tight" id="admin-name">ROOT_USER</p>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 stagger-child" data-active="true">
+                <!-- Total Users -->
+                <div class="glass-card p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-4xl font-black text-white font-outfit" id="total-users">0</span>
+                    </div>
+                    <h3 class="text-[10px] font-black uppercase tracking-widest text-muted">User Nodes</h3>
+                </div>
+
+                <div class="glass-card p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                        </div>
+                        <span class="text-4xl font-black text-white font-outfit">8</span>
+                    </div>
+                    <h3 class="text-[10px] font-black uppercase tracking-widest text-muted">Catalog Items</h3>
+                </div>
+
+                <div class="glass-card p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-4xl font-black text-white font-outfit" id="total-contacts">0</span>
+                    </div>
+                    <h3 class="text-[10px] font-black uppercase tracking-widest text-muted">Active Enquiries</h3>
+                </div>
+
+                <div class="glass-card p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                        </div>
+                        <span class="text-4xl font-black text-white font-outfit" id="total-orders">0</span>
+                    </div>
+                    <h3 class="text-[10px] font-black uppercase tracking-widest text-muted">Total Orders</h3>
+                </div>
+
+                <div class="glass-card p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-4xl font-black text-white font-outfit" id="total-revenue">$0.00</span>
+                    </div>
+                    <h3 class="text-[10px] font-black uppercase tracking-widest text-muted">Total Revenue</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Orders Table -->
+                <div class="lg:col-span-2 glass-panel p-8 overflow-hidden reveal-up">
+                    <h2 class="text-xl font-black mb-8 uppercase tracking-tighter">RECENT <span
+                            class="text-gradient">ORDERS</span></h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead
+                                class="text-[10px] font-black uppercase tracking-[0.2em] text-muted border-b border-white/5">
+                                <tr>
+                                    <th class="py-4 px-2">Order ID</th>
+                                    <th class="py-4 px-2">Customer</th>
+                                    <th class="py-4 px-2">Total</th>
+                                    <th class="py-4 px-2">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-table" class="text-sm text-secondary"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Secondary Lists -->
+                <div class="space-y-8 lg:col-span-1">
+                    <div class="glass-panel p-8 reveal-up">
+                        <h2 class="text-lg font-black mb-6 uppercase tracking-tighter">SIGNAL <span
+                                class="text-gradient">INCOMING</span></h2>
+                        <div id="recent-contacts" class="space-y-4"></div>
+                    </div>
+                    <div class="glass-panel p-8 reveal-up" style="animation-delay: 0.1s">
+                        <h2 class="text-lg font-black mb-6 uppercase tracking-tighter">NETWORK <span
+                                class="text-gradient">GROWTH</span></h2>
+                        <div id="recent-notifications" class="space-y-4"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div class="lg:col-span-2 glass-panel p-8 overflow-hidden reveal-up">
+                    <h2 class="text-xl font-black mb-8 uppercase tracking-tighter">REGISTERED <span
+                            class="text-gradient">NODES</span></h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead
+                                class="text-[10px] font-black uppercase tracking-[0.2em] text-muted border-b border-white/5">
+                                <tr>
+                                    <th class="py-4 px-2">Entity</th>
+                                    <th class="py-4 px-2">Access Level</th>
+                                    <th class="py-4 px-2">Registration</th>
+                                    <th class="py-4 px-2">Last Sync</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table" class="text-sm text-secondary"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Secondary Lists -->
+                <div class="space-y-8 lg:col-span-1">
+                    <div class="glass-panel p-8 reveal-up">
+                        <h2 class="text-lg font-black mb-6 uppercase tracking-tighter">SIGNAL <span
+                                class="text-gradient">INCOMING</span></h2>
+                        <div id="recent-contacts" class="space-y-4"></div>
+                    </div>
+                    <div class="glass-panel p-8 reveal-up" style="animation-delay: 0.1s">
+                        <h2 class="text-lg font-black mb-6 uppercase tracking-tighter">NETWORK <span
+                                class="text-gradient">GROWTH</span></h2>
+                        <div id="recent-notifications" class="space-y-4"></div>
+                    </div>
+                </div>
+
+                <!-- Full Activity Logs -->
+                <div id="activity-logs-container" class="glass-panel p-8 reveal-up">
+                    <h2 class="text-xl font-black mb-8 uppercase tracking-tighter">SYSTEM <span
+                            class="text-gradient">TELEMETRY</span></h2>
+                    <div id="full-activity-logs" class="space-y-3 font-mono text-[10px]"></div>
+                </div>
+
+            </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/cart-manager.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/admin-dashboard.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-reveal');
+                    if (entry.target.classList.contains('stagger-child')) {
+                        entry.target.setAttribute('data-active', 'true');
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-up, .stagger-child').forEach(el => observer.observe(el));
+    </script>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/cart-manager.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/admin-dashboard.js"></script>
+</body>
+
+</html>

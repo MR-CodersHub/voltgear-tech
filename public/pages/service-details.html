@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Collection - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <meta name="description" content="Explore our premium tech collections with detailed specifications.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+
+    <div id="navbar-container"></div>
+
+    <!-- Dynamic Hero -->
+    <div id="service-hero">
+        <section class="min-h-[60vh] flex items-center pt-32 pb-20 px-4 relative overflow-hidden">
+            <div class="absolute inset-0 bg-accent/5 blur-[120px] rounded-full animate-aurora"></div>
+            <div class="max-w-7xl mx-auto w-full text-center stagger-child" data-active="true">
+                <div class="animate-pulse bg-white/5 h-16 w-1/2 mx-auto mb-8 rounded-2xl"></div>
+                <div class="animate-pulse bg-white/5 h-6 w-1/3 mx-auto rounded-xl"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Features -->
+    <section class="py-32 px-4 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal-up">
+                <span
+                    class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Capabilities</span>
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter">ELITE <span
+                        class="text-gradient">SPECIFICATIONS</span></h2>
+            </div>
+            <div id="service-features" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-child"
+                data-active="true">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Products -->
+    <section class="py-32 px-4 bg-dark-deep relative">
+        <div class="absolute inset-0 bg-accent/5 opacity-30"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-20 reveal-up">
+                <span
+                    class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Collection</span>
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter">SELECT YOUR <span
+                        class="text-gradient">MODEL</span></h2>
+            </div>
+            <div id="service-models" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="py-32 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-20 reveal-up">
+                <span
+                    class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Support</span>
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter">COMMON <span
+                        class="text-gradient">ENQUIRIES</span></h2>
+            </div>
+            <div id="service-faqs" class="space-y-4">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Guides (Blog Integration) -->
+    <section class="py-32 px-4 border-t border-white/5 bg-dark-deep/50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-20 reveal-up">
+                <span
+                    class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Knowledge
+                    Base</span>
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter">RELATED <span class="text-gradient">SETUP
+                        GUIDES</span></h2>
+            </div>
+            <div id="related-guides" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/cart-manager.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/service-details.js"></script>
+    <script>
+        // Simple scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-reveal');
+                    if (entry.target.classList.contains('stagger-child')) {
+                        entry.target.setAttribute('data-active', 'true');
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-up, .stagger-child').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Terminal - TechGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+
+    <div id="navbar-container"></div>
+
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Header -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-up">
+                <div>
+                    <span
+                        class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Session
+                        Active</span>
+                    <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">MEMBER <br> <span
+                            class="text-gradient">PROFILE</span></h1>
+                </div>
+                <div class="text-right">
+                    <p class="text-secondary text-sm font-outfit uppercase tracking-widest">Digital Architect</p>
+                    <p class="text-white font-black text-xl tracking-tight" id="user-name">USER_IDENTIFIED</p>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 stagger-child" data-active="true">
+                <div class="glass-card p-8 group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent/20 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-[10px] font-black uppercase tracking-widest text-muted mb-2">Registration Epoch</h3>
+                    <p class="text-2xl font-black text-white font-outfit" id="member-since">DETECTION...</p>
+                </div>
+
+                <div class="glass-card p-8 group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent/20 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-[10px] font-black uppercase tracking-widest text-muted mb-2">Last Authorization</h3>
+                    <p class="text-2xl font-black text-white font-outfit" id="last-login">DETECTION...</p>
+                </div>
+
+                <div class="glass-card p-8 group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div
+                            class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center text-accent group-hover:bg-accent/20 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-[10px] font-black uppercase tracking-widest text-muted mb-2">Activity Telemetry</h3>
+                    <p class="text-2xl font-black text-white font-outfit" id="activity-count">0 OPERATIONS</p>
+                </div>
+            </div>
+
+            <!-- Profile & Activity -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+
+                <div class="lg:col-span-1 space-y-8">
+                    <div class="glass-panel p-10 reveal-up">
+                        <div class="text-center mb-8">
+                            <div class="w-24 h-24 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl font-black text-accent border border-white/5"
+                                id="user-avatar">?</div>
+                            <h3 class="text-2xl font-black tracking-tighter" id="profile-name">ENTITY</h3>
+                            <p class="text-secondary text-sm font-outfit uppercase tracking-widest opacity-60"
+                                id="profile-email">EMAIL_HIDDEN</p>
+                        </div>
+
+                        <div class="space-y-4 mb-8 pt-8 border-t border-white/5">
+                            <div
+                                class="flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
+                                <span class="text-muted">Security Role</span>
+                                <span class="text-accent" id="user-role">CLEARANCE_USER</span>
+                            </div>
+                            <div
+                                class="flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
+                                <span class="text-muted">Unique ID</span>
+                                <span class="text-secondary font-mono" id="user-id">HEX_NULL</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <button class="btn-outline w-full py-4 text-[10px] tracking-[0.2em] font-black">UPDATE
+                                PROFILE</button>
+                            <button
+                                class="w-full py-4 text-[10px] tracking-[0.2em] font-black text-red-400 hover:text-red-300 transition-colors"
+                                onclick="auth.logout()">TERMINATE SESSION</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <div class="glass-panel p-10 reveal-up h-full">
+                        <h2 class="text-xl font-black mb-10 uppercase tracking-tighter">TELEMETRY <span
+                                class="text-gradient">FEED</span></h2>
+                        <div id="activity-feed" class="space-y-6 font-mono text-[10px]">
+                            <!-- Activity populates here -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Order History -->
+            <div class="mb-16 reveal-up">
+                <h2 class="text-2xl font-black mb-8 uppercase tracking-tighter">PURCHASE <span
+                        class="text-gradient">HISTORY</span></h2>
+                <div class="glass-panel overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead
+                                class="text-[10px] font-black uppercase tracking-[0.2em] text-muted border-b border-white/5 bg-white/[0.02]">
+                                <tr>
+                                    <th class="py-4 px-8">Order ID</th>
+                                    <th class="py-4 px-8">Date</th>
+                                    <th class="py-4 px-8">Total</th>
+                                    <th class="py-4 px-8">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-table" class="text-sm text-secondary">
+                                <!-- Orders populate here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Core -->
+            <div class="mt-20 reveal-up">
+                <h2 class="text-2xl font-black mb-10 uppercase tracking-tighter text-center">ACCESS <span
+                        class="text-gradient">NODES</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="../../public/pages/services.html" class="glass-card p-10 text-center group">
+                        <div
+                            class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 text-accent group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-[10px] font-black uppercase tracking-widest text-white group-hover:text-accent transition">
+                            Catalog</h3>
+                    </a>
+                    <a href="../../public/pages/blog.html" class="glass-card p-10 text-center group">
+                        <div
+                            class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 text-accent group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-[10px] font-black uppercase tracking-widest text-white group-hover:text-accent transition">
+                            Editorial</h3>
+                    </a>
+                    <a href="../../public/pages/contact.html" class="glass-card p-10 text-center group">
+                        <div
+                            class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 text-accent group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-[10px] font-black uppercase tracking-widest text-white group-hover:text-accent transition">
+                            Support</h3>
+                    </a>
+                    <a href="../../public/pages/faq.html" class="glass-card p-10 text-center group">
+                        <div
+                            class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6 text-accent group-hover:scale-110 transition-transform">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3
+                            class="text-[10px] font-black uppercase tracking-widest text-white group-hover:text-accent transition">
+                            Insights</h3>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/cart-manager.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/user-dashboard.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-reveal');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+    </script>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/cart-manager.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/user-dashboard.js"></script>
+</body>
+
+</html>

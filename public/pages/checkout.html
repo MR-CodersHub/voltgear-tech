@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+    <div id="navbar-container"></div>
+
+    <main class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- Page Header -->
+            <div class="mb-16 reveal-up">
+                <h1 class="text-6xl md:text-7xl font-black mb-4 tracking-tighter">CHECKOUT</h1>
+                <p class="text-xl text-secondary/80">Complete your order and secure your gear</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Checkout Form -->
+                <div class="lg:col-span-2 reveal-up" style="animation-delay: 0.1s">
+                    <form id="checkout-form" class="space-y-8">
+                        <!-- Shipping Information -->
+                        <div class="glass-panel p-8 border-white/5">
+                            <h2 class="text-2xl font-black mb-6 tracking-tighter flex items-center gap-3">
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent/20 text-accent text-sm font-black">1</span>
+                                Shipping Address
+                            </h2>
+
+                            <div class="space-y-4">
+                                <!-- Full Name -->
+                                <div>
+                                    <label class="block text-sm font-black uppercase tracking-wider text-secondary mb-2">Full Name *</label>
+                                    <input type="text" name="fullName" id="fullName" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:border-accent/50 focus:bg-accent/5 focus:ring-1 focus:ring-accent/30 transition-all outline-none">
+                                    <span class="error-message text-red-400 text-sm mt-1 hidden"></span>
+                                </div>
+
+                                <!-- Email -->
+                                <div>
+                                    <label class="block text-sm font-black uppercase tracking-wider text-secondary mb-2">Email Address *</label>
+                                    <input type="email" name="email" id="email" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:border-accent/50 focus:bg-accent/5 focus:ring-1 focus:ring-accent/30 transition-all outline-none">
+                                    <span class="error-message text-red-400 text-sm mt-1 hidden"></span>
+                                </div>
+
+                                <!-- Phone -->
+                                <div>
+                                    <label class="block text-sm font-black uppercase tracking-wider text-secondary mb-2">Phone Number *</label>
+                                    <input type="tel" name="phone" id="phone" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:border-accent/50 focus:bg-accent/5 focus:ring-1 focus:ring-accent/30 transition-all outline-none">
+                                    <span class="error-message text-red-400 text-sm mt-1 hidden"></span>
+                                </div>
+
+                                <!-- Address -->
+                                <div>
+                                    <label class="block text-sm font-black uppercase tracking-wider text-secondary mb-2">Street Address *</label>
+                                    <input type="text" name="address" id="address" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:border-accent/50 focus:bg-accent/5 focus:ring-1 focus:ring-accent/30 transition-all outline-none">
+                                    <span class="error-message text-red-400 text-sm mt-1 hidden"></span>
+                                </div>
+
+                                <!-- City -->
+                                <div>
+                                    <label class="block text-sm font-black uppercase tracking-wider text-secondary mb-2">City *</label>
+                                    <input type="text" name="city" id="city" required
+                                        class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder:text-white/30 focus:border-accent/50 focus:bg-accent/5 focus:ring-1 focus:ring-accent/30 transition-all outline-none">
+                                    <span class="error-message text-red-400 text-sm mt-1 hidden"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="glass-panel p-8 border-white/5">
+                            <h2 class="text-2xl font-black mb-6 tracking-tighter flex items-center gap-3">
+                                <span class="flex items-center justify-center w-8 h-8 rounded-full bg-accent/20 text-accent text-sm font-black">2</span>
+                                Payment Method
+                            </h2>
+
+                            <div class="space-y-4">
+                                <label class="flex items-center p-4 border border-white/10 rounded-lg cursor-pointer hover:border-accent/30 transition-all group">
+                                    <input type="radio" name="paymentMethod" value="credit-card" checked required class="w-4 h-4 accent-accent">
+                                    <div class="ml-4 flex-grow">
+                                        <p class="font-bold text-white group-hover:text-accent transition">Credit Card</p>
+                                        <p class="text-xs text-secondary/70">Visa, Mastercard, American Express</p>
+                                    </div>
+                                </label>
+
+                                <label class="flex items-center p-4 border border-white/10 rounded-lg cursor-pointer hover:border-accent/30 transition-all group">
+                                    <input type="radio" name="paymentMethod" value="paypal" required class="w-4 h-4 accent-accent">
+                                    <div class="ml-4 flex-grow">
+                                        <p class="font-bold text-white group-hover:text-accent transition">PayPal</p>
+                                        <p class="text-xs text-secondary/70">Fast and secure payment</p>
+                                    </div>
+                                </label>
+
+                                <label class="flex items-center p-4 border border-white/10 rounded-lg cursor-pointer hover:border-accent/30 transition-all group">
+                                    <input type="radio" name="paymentMethod" value="bank-transfer" required class="w-4 h-4 accent-accent">
+                                    <div class="ml-4 flex-grow">
+                                        <p class="font-bold text-white group-hover:text-accent transition">Bank Transfer</p>
+                                        <p class="text-xs text-secondary/70">Direct wire transfer</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-primary w-full py-5 text-lg font-bold">
+                            COMPLETE PURCHASE
+                        </button>
+
+                        <p class="text-xs text-secondary/50 text-center">
+                            Your payment information is secure and encrypted
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <div class="lg:col-span-1 reveal-up" style="animation-delay: 0.2s">
+                    <div class="glass-panel p-8 border-white/5 sticky top-32">
+                        <h2 class="text-xl font-black mb-6 uppercase tracking-wider text-sm">Order Summary</h2>
+
+                        <!-- Cart Items -->
+                        <div id="checkout-items" class="space-y-4 mb-6 max-h-64 overflow-y-auto">
+                            <!-- Populated by checkout.js -->
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="border-t border-white/10 my-6"></div>
+
+                        <!-- Totals -->
+                        <div class="space-y-3 mb-8">
+                            <div class="flex justify-between text-sm text-secondary">
+                                <span>Subtotal</span>
+                                <span id="checkout-subtotal">$0.00</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-secondary">
+                                <span>Tax (10%)</span>
+                                <span id="checkout-tax">$0.00</span>
+                            </div>
+                            <div class="flex justify-between text-lg font-bold text-white">
+                                <span>Total</span>
+                                <span id="checkout-total">$0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Return Link -->
+                        <a href="cart.html" class="text-accent text-xs font-bold uppercase tracking-wider hover:text-accent/80 transition flex items-center gap-2">
+                            ← Return to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/cart-manager.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/checkout.js"></script>
+</body>
+
+</html>

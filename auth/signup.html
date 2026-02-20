@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Collection - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/icon/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+
+    <section class="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
+        <div
+            class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-500/10 rounded-full blur-[120px] animate-aurora">
+        </div>
+
+        <div class="max-w-md w-full relative z-10 reveal-up">
+            <div class="text-center mb-10">
+                <a href="../index.html"
+                    class="inline-flex items-center gap-3 text-4xl font-black lowercase tracking-tighter hover:opacity-80 transition-opacity">
+                    <img src="../assets/img/logo.svg" alt="VoltGear Logo" class="h-12 w-12">
+                    <span>volt<span class="text-accent font-italic">gear</span></span>
+                </a>
+            </div>
+
+            <div class="glass-panel p-10 md:p-12 shadow-2xl border-white/10">
+                <h1 class="text-4xl font-black mb-2 tracking-tighter">NEW <span class="text-gradient">MEMBER</span></h1>
+                <p class="text-secondary text-sm mb-10 font-outfit uppercase tracking-widest">Register your tech
+                    collection</p>
+
+                <form id="signup-form" class="space-y-6">
+                    <div>
+                        <label for="name"
+                            class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Full
+                            Name</label>
+                        <input type="text" id="name" name="name" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white"
+                            placeholder="Alex Rivian">
+                    </div>
+
+                    <div>
+                        <label for="email"
+                            class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Email
+                            Address</label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white"
+                            placeholder="alex@example.com">
+                    </div>
+
+                    <div>
+                        <label for="password"
+                            class="block text-[10px] font-black uppercase tracking-[0.2em] text-muted mb-3">Access
+                            Secret</label>
+                        <input type="password" id="password" name="password" required
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 focus:border-accent focus:bg-accent/5 outline-none transition-all duration-300 text-white"
+                            placeholder="••••••••">
+                    </div>
+
+                    <button type="submit" class="btn-primary w-full py-4 tracking-[0.2em]">
+                        INITIALIZE ACCOUNT
+                    </button>
+                </form>
+
+                <div class="mt-8 text-center pt-8 border-t border-white/5">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-muted">
+                        Active Account?
+                        <a href="login.html" class="text-accent hover:underline ml-2">Secure Login</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="../index.html"
+                    class="text-[10px] font-black uppercase tracking-widest text-muted hover:text-accent transition">
+                    ← TERMINATE SESSION
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="../src/js/auth.js"></script>
+    <script src="../src/js/utils.js"></script>
+    <script src="../src/js/signup.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.reveal-up').classList.add('animate-reveal');
+        });
+    </script>
+</body>
+
+</html>

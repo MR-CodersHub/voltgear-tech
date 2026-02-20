@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoltGear - High-Performance Professional Gear</title>
+    <link rel="icon" type="image/svg+xml" href="assets/icon/favicon.svg">
+    <meta name="description" content="Discover premium computer accessories and gaming peripherals from VoltGear.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 px-4 overflow-hidden relative">
+        <!-- Aurora Background Orbs -->
+        <div
+            class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent/10 rounded-full blur-[120px] animate-aurora">
+        </div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-500/10 rounded-full blur-[120px] animate-aurora"
+            style="animation-delay: -4s"></div>
+
+        <div class="max-w-7xl mx-auto w-full z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Hero Content -->
+                <div class="reveal-up">
+                    <div class="inline-block mb-6">
+                        <span class="badge-accent">2024 COLLECTION</span>
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter">
+                        LEVEL UP YOUR <br> <span class="text-gradient">WORKFLOW</span>
+                    </h1>
+                    <p class="text-xl text-secondary mb-10 max-w-lg leading-relaxed">
+                        Where precision meets artistry. We craft high-performance peripherals designed for the modern
+                        digital architect.
+                    </p>
+                    <div class="flex flex-wrap gap-6">
+                        <a href="public/pages/services.html" class="btn-primary">EXPLORE GEAR</a>
+                        <a href="public/pages/about.html" class="btn-outline">OUR STORY</a>
+                    </div>
+
+                    <!-- Tech Specs -->
+                    <div class="flex gap-12 mt-16 stagger-child" data-active="true">
+                        <div>
+                            <div class="text-xs font-outfit uppercase tracking-[0.2em] text-muted mb-2">Precision</div>
+                            <div class="text-3xl font-bold font-outfit">99.8%</div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-outfit uppercase tracking-[0.2em] text-muted mb-2">Latency</div>
+                            <div class="text-3xl font-bold font-outfit">0.1ms</div>
+                        </div>
+                        <div>
+                            <div class="text-xs font-outfit uppercase tracking-[0.2em] text-muted mb-2">Build</div>
+                            <div class="text-3xl font-bold font-outfit">A-Grade</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image Holder -->
+                <div class="relative group reveal-up" style="animation-delay: 0.2s">
+                    <div
+                        class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full group-hover:bg-accent/30 transition-all duration-700">
+                    </div>
+                    <img src="assets/img/gaming-headset.png" alt="TechGear Flagship"
+                        class="relative z-10 max-w-full h-auto animate-aurora filter drop-shadow-[0_0_50px_rgba(0,255,255,0.2)]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Reveal -->
+    <section class="py-32 px-4 relative bg-dark-deep/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-xl reveal-up">
+                    <span
+                        class="text-accent font-outfit font-bold uppercase tracking-widest text-xs mb-4 block">Categories</span>
+                    <h2 class="text-4xl md:text-6xl font-black tracking-tighter">ENGINEERED FOR <span
+                            class="text-gradient">EVERY NEED</span></h2>
+                </div>
+                <p class="text-secondary text-lg max-w-sm mb-2 reveal-up" style="animation-delay: 0.1s">
+                    Browse our specialized collections curated for professionals, gamers, and creators.
+                </p>
+            </div>
+
+            <div id="categories-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-child"
+                data-active="true">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why TechGear (Glass Section) -->
+    <section class="py-32 px-4 bg-dark-deep relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="glass-panel p-12 md:p-24 overflow-hidden relative border-white/10 group">
+                <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-accent/5 blur-[100px] rounded-full group-hover:bg-accent/10 transition-colors">
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal-up">
+                        <h2 class="text-4xl md:text-5xl font-black mb-8 tracking-tighter leading-tight">THE APEX OF
+                            <span class="text-gradient">CRAFTSMANSHIP</span>
+                        </h2>
+                        <p class="text-secondary mb-10 text-lg">We don't just build peripherals; we design extensions of
+                            your intent. Every curve, every switch, and every sensor is tuned to perfection.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent shrink-0 mt-1">
+                                    ✓</div>
+                                <p class="text-white font-medium">Military-grade durability components</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center text-accent shrink-0 mt-1">
+                                    ✓</div>
+                                <p class="text-white font-medium">Ergonomic design for 12hr+ sessions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 stagger-child" data-active="true">
+                        <div class="glass-card p-8 text-center border-white/5">
+                            <h3 class="text-3xl font-bold mb-2">2 years</h3>
+                            <p class="text-xs text-muted uppercase tracking-widest">Warranty</p>
+                        </div>
+                        <div class="glass-card p-8 text-center border-white/5">
+                            <h3 class="text-3xl font-bold mb-2">24/7</h3>
+                            <p class="text-xs text-muted uppercase tracking-widest">Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Products -->
+    <section id="featured" class="py-32 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter">ELITE <span
+                        class="text-gradient">PICKS</span></h2>
+                <a href="public/pages/services.html" class="btn-outline hidden md:block">VIEW ALL</a>
+            </div>
+            <div id="featured-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Setup Guides Section -->
+    <section class="py-32 px-4 bg-dark-deep/50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-xl reveal-up">
+                    <span
+                        class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Knowledge
+                        Base</span>
+                    <h2 class="text-4xl md:text-6xl font-black tracking-tighter">LEARN & UPGRADE <br> <span
+                            class="text-gradient">YOUR SETUP</span></h2>
+                </div>
+                <a href="public/pages/blog.html" class="btn-outline reveal-up">VIEW ALL GUIDES</a>
+            </div>
+            <div id="home-blog-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-32 px-4 relative overflow-hidden bg-dark-deep">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal-up">
+                <span
+                    class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Ecosystem
+                    Feedback</span>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter">VOICES OF <br> <span
+                        class="text-gradient">THE ELITE</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-child" data-active="true">
+                <!-- Testimonial 1 -->
+                <div class="glass-card p-10 flex flex-col border-white/5 hover:border-accent/20 transition-all group">
+                    <div class="flex gap-1 mb-6">
+                        <span class="text-accent text-xs">★</span><span class="text-accent text-xs">★</span><span
+                            class="text-accent text-xs">★</span><span class="text-accent text-xs">★</span><span
+                            class="text-accent text-xs">★</span>
+                    </div>
+                    <p class="text-white text-lg font-medium leading-relaxed mb-10 flex-grow italic">
+                        "Absolute game changer. The latency is practically non-existent. It's the precision I've been
+                        waiting for."
+                    </p>
+                    <div class="flex items-center gap-4 pt-6 border-t border-white/5">
+                        <div
+                            class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent font-black">
+                            SK</div>
+                        <div>
+                            <div class="text-white font-bold text-sm uppercase tracking-tight">Sarah K.</div>
+                            <div class="text-[10px] text-muted uppercase tracking-widest">Professional Gamer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-card p-10 flex flex-col border-white/5 hover:border-accent/20 transition-all group">
+                    <div class="flex gap-1 mb-6">
+                        <span class="text-accent text-xs">★</span><span class="text-accent text-xs">★</span><span
+                            class="text-accent text-xs">★</span><span class="text-accent text-xs">★</span><span
+                            class="text-accent text-xs">★</span>
+                    </div>
+                    <p class="text-white text-lg font-medium leading-relaxed mb-10 flex-grow italic">
+                        "The ergonomic design of the mouse saved my wrists during long coding sessions. Worth every
+                        penny."
+                    </p>
+                    <div class="flex items-center gap-4 pt-6 border-t border-white/5">
+                        <div
+                            class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent font-black">
+                            DM</div>
+                        <div>
+                            <div class="text-white font-bold text-sm uppercase tracking-tight">David M.</div>
+                            <div class="text-[10px] text-muted uppercase tracking-widest">Software Architect</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass-card p-10 flex flex-col border-white/5 hover:border-accent/20 transition-all group">
+                    <div class="flex gap-1 mb-6">
+                        <span class="text-accent text-xs">★</span><span class="text-accent text-xs">★</span><span
+                            class="text-accent text-xs">★</span><span class="text-accent text-xs">★</span><span
+                            class="text-accent text-xs">★</span>
+                    </div>
+                    <p class="text-white text-lg font-medium leading-relaxed mb-10 flex-grow italic">
+                        "VoltGear peripherals are where aesthetics meet pure performance. My studio wouldn't be complete
+                        without them."
+                    </p>
+                    <div class="flex items-center gap-4 pt-6 border-t border-white/5">
+                        <div
+                            class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent font-black">
+                            ER</div>
+                        <div>
+                            <div class="text-white font-bold text-sm uppercase tracking-tight">Elena R.</div>
+                            <div class="text-[10px] text-muted uppercase tracking-widest">Creative Director</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-40 px-4 relative overflow-hidden bg-dark-deep">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10 reveal-up">
+            <h2 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter">READY FOR THE <span
+                    class="text-gradient">UPGRADE?</span></h2>
+            <p class="text-xl text-secondary mb-12 max-w-xl mx-auto">Join the new era of high-performance computing.
+                Experience VoltGear quality today.</p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="public/pages/services.html" class="btn-primary px-12 py-5">SHOP COLLECTION</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="src/js/data.js"></script>
+    <script src="src/js/auth.js"></script>
+    <script src="src/js/utils.js"></script>
+    <script src="src/js/cart-manager.js"></script>
+    <script src="src/js/navbar.js"></script>
+    <script src="src/js/footer.js"></script>
+    <script src="src/js/home.js"></script>
+    <script>
+        // Simple scroll reveal logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-reveal');
+                    if (entry.target.classList.contains('stagger-child')) {
+                        entry.target.setAttribute('data-active', 'true');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-up, .stagger-child').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
