@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep">
+    <div id="navbar-container"></div>
+
+    <section class="pt-40 pb-40 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-black mb-12 tracking-tighter">YOUR <span
+                    class="text-gradient">CART</span></h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Cart Items -->
+                <div class="lg:col-span-2 space-y-6" id="cart-items-container">
+                    <!-- Populated by cart.js -->
+                    <div class="glass-panel p-20 text-center">
+                        <svg class="w-16 h-16 text-white/20 mx-auto mb-6" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <p class="text-secondary text-xl font-medium">Your cart is currently empty.</p>
+                        <a href="services.html" class="btn-primary mt-8 inline-block">Explore Products</a>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="lg:col-span-1">
+                    <div class="glass-panel p-8 sticky top-32">
+                        <h2 class="text-2xl font-bold mb-8 font-outfit uppercase tracking-widest text-xs">Order Summary
+                        </h2>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between text-secondary">
+                                <span>Subtotal</span>
+                                <span id="cart-subtotal">$0.00</span>
+                            </div>
+                            <div class="flex justify-between text-secondary">
+                                <span>Shipping</span>
+                                <span id="cart-shipping">Calculated at next step</span>
+                            </div>
+                            <div class="section-divider my-4"></div>
+                            <div class="flex justify-between text-xl font-bold text-white">
+                                <span>Total</span>
+                                <span id="cart-total">$0.00</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary w-full py-4 text-center">PROCEED TO CHECKOUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/cart-manager.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/cart.js"></script>
+</body>
+
+</html>

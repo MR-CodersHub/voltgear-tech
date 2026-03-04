@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <meta name="description"
+        content="Browse our complete range of gaming gear, office essentials, streaming accessories, and connectivity tools.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bg-dark-primary">
+
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-24 px-4 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="text-accent font-outfit font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Premium Collection</span>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter leading-none">
+                Product <span class="text-gradient">Collections</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-secondary max-w-3xl mx-auto font-light">
+                Engineered solutions for every workspace, gaming setup, and creative endeavor
+            </p>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div id="services-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-max">
+                <!-- Dynamically populated from data.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 px-4 bg-gradient-to-b from-dark-secondary/50 to-dark-secondary/20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-t from-accent/5 via-transparent"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-5xl md:text-6xl font-black mb-6 tracking-tighter leading-tight">
+                Can't find what you're <span class="text-gradient">looking for?</span>
+            </h2>
+            <p class="text-lg text-secondary/80 mb-10 max-w-xl mx-auto leading-relaxed">
+                Our team specializes in personalized product recommendations tailored to your unique workflow and requirements.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="contact.html" class="btn-primary px-10 py-4 text-base">GET PERSONALIZED HELP</a>
+                <a href="blog.html" class="btn-outline px-10 py-4 text-base">BROWSE GUIDES</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="../../src/js/data.js"></script>
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script src="../../src/js/cart-manager.js"></script>
+    <script src="../../src/js/navbar.js"></script>
+    <script src="../../src/js/footer.js"></script>
+    <script src="../../src/js/services.js"></script>
+</body>
+
+</html>

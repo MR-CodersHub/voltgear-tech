@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - VoltGear</title>
+    <link rel="icon" type="image/svg+xml" href="../../assets/icon/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../src/css/styles.css">
+</head>
+
+<body class="bg-dark-deep text-white dashboard-page-wrapper">
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-logo">
+                    <a href="../../index.html" class="brand-link">
+                        <img src="../../assets/img/logo.svg" alt="VoltGear" class="h-8 w-8">
+                        <span class="text-xl font-black tracking-tighter">VOLT<span
+                                class="text-accent font-italic">GEAR</span></span>
+                    </a>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#" class="sidebar-link active" data-section="dashboard">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="#" class="sidebar-link" data-section="products">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                        Products
+                    </a>
+                    <a href="#" class="sidebar-link" data-section="orders">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                        </svg>
+                        Orders
+                    </a>
+                    <a href="#" class="sidebar-link" data-section="customers">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Customers
+                    </a>
+                    <a href="#" class="sidebar-link" data-section="analytics">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                        Analytics
+                    </a>
+                    <a href="#" class="sidebar-link" data-section="settings">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        Settings
+                    </a>
+                    <button id="logout-btn" class="sidebar-link logout-link w-full text-left">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        Logout
+                    </button>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="flex justify-between items-center mb-10 reveal-up">
+                <div class="flex items-center gap-4">
+                    <!-- Dashboard Hamburger (Mobile/Tablet) -->
+                    <div class="mobile-sidebar-toggle" id="sidebar-toggle">
+                        <svg class="w-6 h-6 outline-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-4xl font-black tracking-tighter uppercase">Command <span
+                                class="text-gradient">Center</span></h1>
+                        <p class="text-secondary text-[10px] font-black uppercase tracking-[0.2em] mt-2">System Status:
+                            <span class="text-accent">Operational</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-white font-bold text-sm" id="admin-name">Root Admin</p>
+                        <p class="text-[10px] text-muted font-black uppercase tracking-widest">Master Access</p>
+                    </div>
+                    <div
+                        class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center border border-white/10">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Sections -->
+            <div id="dashboard-sections">
+                <!-- Dashboard Overview -->
+                <section id="section-dashboard" class="content-section">
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                        <div class="glass-card p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="p-3 bg-accent/10 rounded-xl text-accent">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <span
+                                    class="text-[10px] font-black text-green-400 bg-green-400/10 px-2 py-1 rounded">+12.5%</span>
+                            </div>
+                            <h3 class="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Monthly Revenue
+                            </h3>
+                            <p class="text-3xl font-black font-outfit">$42,850.00</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <div class="p-3 bg-blue-500/10 rounded-xl text-blue-500 mb-4 inline-block">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-[10px] font-black uppercase tracking-widest text-muted mb-1">New Orders</h3>
+                            <p class="text-3xl font-black font-outfit">156</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <div class="p-3 bg-red-500/10 rounded-xl text-red-500 mb-4 inline-block">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Stock Alerts
+                            </h3>
+                            <p class="text-3xl font-black font-outfit">4 Items</p>
+                        </div>
+                        <div class="glass-card p-6">
+                            <div class="p-3 bg-purple-500/10 rounded-xl text-purple-500 mb-4 inline-block">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-[10px] font-black uppercase tracking-widest text-muted mb-1">Active Users
+                            </h3>
+                            <p class="text-3xl font-black font-outfit">1,240</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+                        <!-- Recent Activity Table -->
+                        <div class="lg:col-span-2 glass-panel p-8 overflow-hidden">
+                            <h2 class="text-xl font-black mb-6 uppercase tracking-tighter">ORDER <span
+                                    class="text-gradient">STATUS</span></h2>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead
+                                        class="text-[10px] font-black uppercase tracking-widest text-muted border-b border-white/5">
+                                        <tr>
+                                            <th class="py-4 px-2">Order ID</th>
+                                            <th class="py-4 px-2">Customer</th>
+                                            <th class="py-4 px-2">Product</th>
+                                            <th class="py-4 px-2">Total</th>
+                                            <th class="py-4 px-2">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-[11px] font-medium text-secondary">
+                                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition">
+                                            <td class="py-4 px-2 font-mono">#VG-89012</td>
+                                            <td class="py-4 px-2">Alex Rivera</td>
+                                            <td class="py-4 px-2">Apex Mech-Key v2</td>
+                                            <td class="py-4 px-2">$249.00</td>
+                                            <td class="py-4 px-2"><span
+                                                    class="px-2 py-1 rounded-md bg-green-500/10 text-green-400">Delivered</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition">
+                                            <td class="py-4 px-2 font-mono">#VG-89013</td>
+                                            <td class="py-4 px-2">Sarah Chen</td>
+                                            <td class="py-4 px-2">Titanium Mousepad</td>
+                                            <td class="py-4 px-2">$89.00</td>
+                                            <td class="py-4 px-2"><span
+                                                    class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400">Processing</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition">
+                                            <td class="py-4 px-2 font-mono">#VG-89014</td>
+                                            <td class="py-4 px-2">Marcus Vance</td>
+                                            <td class="py-4 px-2">Quantum Headset</td>
+                                            <td class="py-4 px-2">$399.00</td>
+                                            <td class="py-4 px-2"><span
+                                                    class="px-2 py-1 rounded-md bg-blue-500/10 text-blue-400">Shipped</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="border-b border-white/5 hover:bg-white/[0.02] transition">
+                                            <td class="py-4 px-2 font-mono">#VG-89015</td>
+                                            <td class="py-4 px-2">Elena Rodriguez</td>
+                                            <td class="py-4 px-2">Cyber Desk Mat</td>
+                                            <td class="py-4 px-2">$45.00</td>
+                                            <td class="py-4 px-2"><span
+                                                    class="px-2 py-1 rounded-md bg-red-500/10 text-red-400">Pending</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Low Stock Alerts -->
+                        <div class="glass-panel p-8">
+                            <h2 class="text-xl font-black mb-6 uppercase tracking-tighter">LOW <span
+                                    class="text-gradient">STOCK</span></h2>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/5">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center text-red-500">
+                                        <span class="font-black">2</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold">Apex Mech-Key v2</p>
+                                        <p class="text-[10px] text-muted uppercase tracking-widest">Only 2 units left
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/5">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center text-yellow-500">
+                                        <span class="font-black">8</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold">Quantum Mouse</p>
+                                        <p class="text-[10px] text-muted uppercase tracking-widest">Restock recommended
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/5">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center text-red-500">
+                                        <span class="font-black">1</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-bold">Titanium Desk</p>
+                                        <p class="text-[10px] text-muted uppercase tracking-widest">CRITICAL STOCK</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="w-full mt-6 btn-outline py-3 text-[10px] tracking-widest">VIEW ALL
+                                INVENTORY</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Placeholder Sections for Menu Items -->
+                <section id="section-products" class="content-section hidden">
+                    <div class="glass-panel p-20 text-center">
+                        <h2 class="text-4xl font-black mb-4 uppercase tracking-tighter">Inventory <span
+                                class="text-gradient">Management</span></h2>
+                        <p class="text-secondary max-w-md mx-auto">Database connection established. Encrypted product
+                            ledger ready for modification.</p>
+                        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                                <p class="text-3xl font-black text-accent mb-2">1,248</p>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-muted">Total SKUs</p>
+                            </div>
+                            <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                                <p class="text-3xl font-black text-accent mb-2">$842k</p>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-muted">Inventory Value
+                                </p>
+                            </div>
+                            <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                                <p class="text-3xl font-black text-accent mb-2">12</p>
+                                <p class="text-[10px] font-black uppercase tracking-widest text-muted">Categories</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-orders" class="content-section hidden">
+                    <div class="glass-panel p-20 text-center">
+                        <h2 class="text-4xl font-black mb-4 uppercase tracking-tighter">Global <span
+                                class="text-gradient">Logistics</span></h2>
+                        <p class="text-secondary max-w-md mx-auto">Real-time order tracking and fulfillment
+                            synchronization with regional distribution nodes.</p>
+                        <div class="mt-10 flex justify-center gap-4">
+                            <div
+                                class="px-6 py-3 bg-accent text-dark-primary rounded-xl font-bold uppercase text-xs tracking-widest">
+                                Active Orders</div>
+                            <div
+                                class="px-6 py-3 border border-white/10 rounded-xl font-bold uppercase text-xs tracking-widest">
+                                Historical Data</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-customers" class="content-section hidden">
+                    <div class="glass-panel p-20 text-center">
+                        <h2 class="text-4xl font-black mb-4 uppercase tracking-tighter">Citizens <span
+                                class="text-gradient">Database</span></h2>
+                        <p class="text-secondary max-w-md mx-auto">Member profiles, tiered access levels, and engagement
+                            history for the Elite Collection.</p>
+                        <div class="mt-10 bg-white/5 p-6 rounded-2xl border border-white/10 max-w-xl mx-auto text-left">
+                            <div class="flex items-center gap-4 border-b border-white/10 pb-4 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-accent/20"></div>
+                                <div>
+                                    <p class="font-bold">Latest Member: Vector_Prime</p>
+                                    <p class="text-[10px] text-muted uppercase tracking-widest">Joined 2 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-accent/20"></div>
+                                <div>
+                                    <p class="font-bold">Top Contributor: Neon_Spectre</p>
+                                    <p class="text-[10px] text-muted uppercase tracking-widest">12 Purchases this month
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-analytics" class="content-section hidden">
+                    <div class="glass-panel p-20 text-center">
+                        <h2 class="text-4xl font-black mb-4 uppercase tracking-tighter">Neural <span
+                                class="text-gradient">Analytics</span></h2>
+                        <p class="text-secondary max-w-md mx-auto">Predictive modeling and market trend analysis based
+                            on user interaction telemetry.</p>
+                        <div class="mt-10 h-32 flex items-end gap-2 justify-center">
+                            <div class="w-8 bg-accent/20 rounded-t-lg h-1/4 animate-pulse"></div>
+                            <div class="w-8 bg-accent/40 rounded-t-lg h-2/4 animate-pulse"
+                                style="animation-delay: 0.1s"></div>
+                            <div class="w-8 bg-accent/60 rounded-t-lg h-3/4 animate-pulse"
+                                style="animation-delay: 0.2s"></div>
+                            <div class="w-8 bg-accent rounded-t-lg h-full animate-pulse" style="animation-delay: 0.3s">
+                            </div>
+                            <div class="w-8 bg-accent/60 rounded-t-lg h-2/3 animate-pulse"
+                                style="animation-delay: 0.4s"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-settings" class="content-section hidden">
+                    <div class="glass-panel p-10 max-w-2xl mx-auto">
+                        <h2 class="text-xl font-black mb-8 uppercase tracking-tighter">System <span
+                                class="text-gradient">Configuration</span></h2>
+                        <div class="space-y-6">
+                            <div
+                                class="flex justify-between items-center p-4 bg-white/5 rounded-xl border border-white/10">
+                                <div>
+                                    <p class="font-bold">Dark Protocol</p>
+                                    <p class="text-[10px] text-muted uppercase tracking-widest">Override system theme to
+                                        deep black</p>
+                                </div>
+                                <div class="w-12 h-6 bg-accent rounded-full relative">
+                                    <div class="absolute right-1 top-1 w-4 h-4 bg-dark-primary rounded-full"></div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex justify-between items-center p-4 bg-white/5 rounded-xl border border-white/10">
+                                <div>
+                                    <p class="font-bold">Auto-Sync Nodes</p>
+                                    <p class="text-[10px] text-muted uppercase tracking-widest">Synchronize inventory
+                                        every 60 seconds</p>
+                                </div>
+                                <div class="w-12 h-6 bg-white/10 rounded-full relative">
+                                    <div class="absolute left-1 top-1 w-4 h-4 bg-white/40 rounded-full"></div>
+                                </div>
+                            </div>
+                            <button class="w-full btn-primary py-4 text-xs tracking-widest">SAVE GLOBAL CONFIG</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <script src="../../src/js/auth.js"></script>
+    <script src="../../src/js/utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check auth
+            if (!auth.isAuthenticated() || auth.getCurrentUser().role !== 'admin') {
+                window.location.href = '../login.html';
+                return;
+            }
+
+            const user = auth.getCurrentUser();
+            document.getElementById('admin-name').textContent = user.name;
+
+            // Sidebar section switching
+            const sidebarLinks = document.querySelectorAll('.sidebar-link[data-section]');
+            const sections = document.querySelectorAll('.content-section');
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetSectionId = 'section-' + link.getAttribute('data-section');
+
+                    // Update UI
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    sections.forEach(section => {
+                        if (section.id === targetSectionId) {
+                            section.classList.remove('hidden');
+                        } else {
+                            section.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // Setup sidebar close handlers (hamburger, overlay, all sidebar links)
+            SidebarManager.setupSidebarCloseHandlers();
+
+            // Logout
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', () => {
+                    localStorage.removeItem('techgear_current_user');
+                    sessionStorage.clear();
+                    Toast.success('Session terminated.');
+                    setTimeout(() => {
+                        window.location.href = '../login.html';
+                    }, 1000);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
